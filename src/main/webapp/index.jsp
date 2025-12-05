@@ -1,43 +1,82 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Hello World JSP</title>
+    <title>Sample Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            text-align: center;
-            margin-top: 80px;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 40px;
         }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #555;
-        }
-        .box {
+        .container {
             background: white;
-            padding: 30px;
-            width: 40%;
+            width: 400px;
             margin: auto;
+            padding: 25px;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px #ccc;
+            box-shadow: 0px 0px 10px #bbb;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 20px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #0066ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0051cc;
         }
     </style>
 </head>
 <body>
 
-    <div class="box">
-        <h1>Welcome to My WebApp</h1>
-        <p>This is a sample JSP page deployed using Maven.</p>
+<div class="container">
+    <h2>Registration Form</h2>
 
-        <hr style="margin: 20px">
+    <form action="submit.jsp" method="post">
+        
+        <label>Full Name</label>
+        <input type="text" name="fullname" required>
 
-        <p>Current Time (JSP example):</p>
-        <h3><%= new java.util.Date() %></h3>
-    </div>
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Phone Number</label>
+        <input type="text" name="phone" required>
+
+        <label>Gender</label>
+        <select name="gender" required>
+            <option value="">-- Select --</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+
+        <label>Address</label>
+        <textarea name="address" rows="3" required></textarea>
+
+        <button type="submit">Submit</button>
+
+    </form>
+</div>
 
 </body>
 </html>
